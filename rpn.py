@@ -10,6 +10,7 @@ operators = {
     '/': operator.truediv,
     '//': operator.floordiv,
     '^': operator.pow,
+    '&': operator.and_,
 }
 
 def calculate(myarg, output=True):
