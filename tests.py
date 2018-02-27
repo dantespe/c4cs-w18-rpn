@@ -30,3 +30,8 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(169, rpn.calculate("13 2 ^", output=False))
         self.assertEqual(256, rpn.calculate("2 8 ^", output=False))
 
+    def test_bitwise_and(self):
+        self.assertEqual(0, rpn.calculate("0 0 &", output=False))
+        self.assertEqual(7, rpn.calculate("7 15 &", output=False))
+        self.assertEqual(7, rpn.calculate("15 7 &", output=False))
+        self.assertEqual(65535, rpn.calculate("131071 65535 &", output=False))
