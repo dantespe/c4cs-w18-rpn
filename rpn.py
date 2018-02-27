@@ -25,7 +25,7 @@ operators = {
         'type': 'binary'
     },
     '^': {
-        'funciton': operator.pow,
+        'function': operator.pow,
         'type': 'binary'
     },
     '&': {
@@ -35,7 +35,7 @@ operators = {
     '|': {
         'function': operator.or_,
         'type': 'binary',
-    }
+    },
 }
 
 def calculate(myarg, output=True):
