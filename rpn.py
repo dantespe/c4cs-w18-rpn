@@ -2,6 +2,7 @@
 
 import operator
 import extra_operators
+import math
 
 operators = {
     '+': {
@@ -38,6 +39,10 @@ operators = {
     },
     '~': {
         'function': extra_operators.neg_,
+        'type': 'unary',
+    },
+    '!': {
+        'function': math.factorial,
         'type': 'unary',
     }
 }
