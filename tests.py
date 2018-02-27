@@ -45,8 +45,8 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(31, rpn.calculate("20 11 |", output=False))
 
     def test_bitwise_neg(self):
-        self.assertEqual(-2, rpn.calculate("-1 ~", output=False))
-        self.assertEqual(-1, rpn.calculate("-2 ~", output=False))
-        self.assertEqual(0, rpn.calculate("0 ~", output=False))
+        self.assertEqual(-2, rpn.calculate("1 ~", output=False))
+        self.assertEqual(1, rpn.calculate("-2 ~", output=False))
+        self.assertEqual(-1, rpn.calculate("0 ~", output=False))
         self.assertEqual(101, rpn.calculate("-102 ~", output=False))
 

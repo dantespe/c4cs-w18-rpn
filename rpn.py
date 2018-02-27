@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
-import extras_operators
+import extra_operators
 
 operators = {
     '+': {
@@ -36,6 +36,10 @@ operators = {
         'function': operator.or_,
         'type': 'binary',
     },
+    '~': {
+        'function': extra_operators.neg_,
+        'type': 'unary',
+    }
 }
 
 def calculate(myarg, output=True):
@@ -63,8 +67,12 @@ def calculate(myarg, output=True):
 
 def main():
     while True:
-        result = calculate(input("rpn calc> "))
-        print("Result: ", result)
+        try:
+            result = calculate(input("rpn calc> "))
+            print("Result: ", result)
+        except KeyboardInterrupt:
+            print("")
+            break
 
 if __name__ == '__main__':
     main()
