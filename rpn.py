@@ -10,7 +10,7 @@ operators = {
     '/': operator.truediv,
 }
 
-def calculate(myarg):
+def calculate(myarg, output=True):
     stack = list()
     for token in myarg.split():
         try:
@@ -22,7 +22,8 @@ def calculate(myarg):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        print(stack)
+        if output:
+            print(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
