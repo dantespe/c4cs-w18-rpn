@@ -35,3 +35,11 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(7, rpn.calculate("7 15 &", output=False))
         self.assertEqual(7, rpn.calculate("15 7 &", output=False))
         self.assertEqual(65535, rpn.calculate("131071 65535 &", output=False))
+
+    def test_bitwsie_or(self):
+        self.assertEqual(-1, rpn.calculate("-1 0 |", output=False))
+        self.assertEqual(15, rpn.calculate("7 15 |", output=False))
+        self.assertEqual(15, rpn.calculate("15 7 |", output=False))
+        self.assertEqual(127, rpn.calculate("63 127 |", output=False))
+        self.assertEqual(31, rpn.calculate("20 11 |", output=False))
+
