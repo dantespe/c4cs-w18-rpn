@@ -23,4 +23,10 @@ class TestBasics(unittest.TestCase):
     def test_floor_divide(self):
         self.assertEqual(2, rpn.calculate("9 4 //", output=False))
 
+    def test_expon(self):
+        self.assertEqual(81, rpn.calculate("3 4 ^", output=False))
+        self.assertEqual(0, rpn.calculate("0 1 ^", output=False))
+        self.assertEqual(144, rpn.calculate("12 2 ^", output=False))
+        self.assertEqual(169, rpn.calculate("13 2 ^", output=False))
+        self.assertEqual(256, rpn.calculate("2 8 ^", output=False))
 
