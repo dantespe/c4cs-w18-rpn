@@ -3,6 +3,8 @@
 import unittest
 import rpn
 
+from rpn import calculate as c
+
 class TestBasics(unittest.TestCase):
     def test_add(self):
         result = rpn.calculate("1 1 +", output=False)
@@ -49,4 +51,15 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(1, rpn.calculate("-2 ~", output=False))
         self.assertEqual(-1, rpn.calculate("0 ~", output=False))
         self.assertEqual(101, rpn.calculate("-102 ~", output=False))
+
+    # Implement Factorial
+    def test_factorial(self):
+        self.assertEqual(1, c("0 !", output=False))
+        self.assertEqual(1, c("1 !", output=False))
+        self.assertEqual(2, c("2 !", output=False))
+        self.assertEqual(6, c("3 !", output=False))
+        self.assertEqual(24, c("4 !", output=False))
+        self.assertEqual(120, c("5 !", output=False))
+        self.assertEqual(720, c("6 !", output=False))
+
 
